@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Item } from '../../models/item';
 import { RowProductComponent } from '../row-product/row-product.component';
 
@@ -10,4 +10,9 @@ import { RowProductComponent } from '../row-product/row-product.component';
 })
 export class ListProductsComponent {
   @Input() products: Item[] = [];
+  @Output() deleteEventEmitter: EventEmitter<number> = new EventEmitter();
+
+  onDelete(id: number) {
+    this.deleteEventEmitter.emit(id);
+  }
 }

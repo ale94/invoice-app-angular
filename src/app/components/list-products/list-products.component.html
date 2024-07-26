@@ -7,14 +7,15 @@
       <th>producto</th>
       <th>precio</th>
       <th>cantidad</th>
+      <th>borrar</th>
     </tr>
   </thead>
   <tbody>
     @for (item of products; track $index) {
-    <tr row-product [item]="item"></tr>
+    <tr row-product [item]="item" (deleteEventEmitter)="onDelete($event)"></tr>
     }
   </tbody>
 </table>
 } @else {
-    <div class="alert alert-warning">No tiene producto la factura!</div>
+<div class="alert alert-warning">No tiene producto la factura!</div>
 }

@@ -13,7 +13,8 @@
           <company-view [company]="invoice.company" />
         </div>
       </div>
-      <list-products [products]="invoice.items" />
+      <list-products [products]="invoice.items" (deleteEventEmitter)="deleteItem($event)"/>
+      <total [total]="invoice.total" />
     </div>
   </div>
 </div>
