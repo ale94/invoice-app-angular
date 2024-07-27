@@ -7,6 +7,8 @@ import { CompanyViewComponent } from '../company-view/company-view.component';
 import { ListProductsComponent } from '../list-products/list-products.component';
 import { RowProductComponent } from '../row-product/row-product.component';
 import { TotalComponent } from '../total/total.component';
+import { FormProductComponent } from '../form-product/form-product.component';
+import { Item } from '../../models/item';
 
 @Component({
   selector: 'app-invoice',
@@ -18,6 +20,7 @@ import { TotalComponent } from '../total/total.component';
     ListProductsComponent,
     RowProductComponent,
     TotalComponent,
+    FormProductComponent
   ],
   templateUrl: './invoice.component.html',
 })
@@ -28,6 +31,10 @@ export class InvoiceComponent implements OnInit {
 
   ngOnInit(): void {
     this.invoice = this.service.getInvoice();
+  }
+  
+  addItem(item:Item): void {
+    this.invoice = this.service.save(item);
   }
 
   deleteItem(id: number) {
