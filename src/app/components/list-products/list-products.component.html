@@ -12,7 +12,7 @@
   </thead>
   <tbody>
     @for (item of products; track $index) {
-    <tr row-product [item]="item" (deleteEventEmitter)="onDelete($event)"></tr>
+      <tr row-product [item]="item" (deleteEventEmitter)="onDelete($event)"></tr>
     }
   </tbody>
 </table>

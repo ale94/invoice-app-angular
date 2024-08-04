@@ -20,7 +20,7 @@ import { Item } from '../../models/item';
     ListProductsComponent,
     RowProductComponent,
     TotalComponent,
-    FormProductComponent
+    FormProductComponent,
   ],
   templateUrl: './invoice.component.html',
 })
@@ -29,11 +29,11 @@ export class InvoiceComponent implements OnInit {
 
   constructor(private service: InvoiceService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.invoice = this.service.getInvoice();
   }
-  
-  addItem(item:Item): void {
+
+  addItem(item: Item) {
     this.invoice = this.service.save(item);
   }
 

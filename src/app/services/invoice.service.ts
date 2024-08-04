@@ -13,7 +13,7 @@ export class InvoiceService {
 
   getInvoice(): Invoice {
     const total = this.calculateTotal();
-    return { ...this.invoice, total };
+    return { ...this.invoice, total: total };
   }
 
   delete(id: number): Invoice {
